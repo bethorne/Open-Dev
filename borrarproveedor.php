@@ -3,8 +3,6 @@
 
 <?php
 
-
-
 function limpiar($string )
 {
 
@@ -44,9 +42,8 @@ function limpiar($string )
 					$insert = "SELECT * FROM tbk_proveedor WHERE nombre_pv LIKE '".trim($cpaterno)."%'";
 					break;
 			case '9':
-				$insert ="DELETE FROM tbk_proveedor WHERE rut_pv = '".$delete."' ";
-					
-						break;
+					$insert ="DELETE FROM tbk_proveedor WHERE rut_pv = '".$delete."' ";
+					break;
 				
 			
 		}
