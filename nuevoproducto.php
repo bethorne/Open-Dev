@@ -40,10 +40,22 @@ function limpiar($string )
 	
 	if (!empty($tarea))
 	{
+		
+		if($nombre=="" || $marca=="" || $modelo=="" || $fam=="" || $subfam ){
+			$tipomensaje= 2;
+			$texto='Debe completar todos los campos';
+			include("mensaje.php");
+			}
+			
+		
+		
+		
 		if ($cbarra1 != '')
 		{
 			include("conector/conector.php");
 			
+			
+			 
 			$insert = "INSERT INTO tbk_producto VALUES(";
 			$insert.= "'',";
 			$insert.= "'".limpiar($cbarra1)."',";
