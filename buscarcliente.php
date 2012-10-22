@@ -34,7 +34,9 @@ function limpiar($string )
 		{
 				
 			case '1':
-					$insert = "SELECT * FROM tbk_cliente WHERE rut_cli LIKE '".trim($erut)."%'";
+			$insert ="SELECT *, MATCH(rut_cli,nombre_cli) AGAINST('".trim($erut)."') FROM tbk_cliente WHERE MATCH(rut_cli,nombre_cli) AGAINST('".trim($erut)."')";
+			
+					//$insert = "SELECT * FROM tbk_cliente WHERE rut_cli LIKE '".trim($erut)."%'";
 					break;
 					
 		
@@ -132,19 +134,6 @@ function limpiar($string )
 				<td valign='top' width='16'>
 						<input type='image' src='images/lupa.png' onClick='np.look.value=1; np.submit()'>
 				</td>
-				</tr>
-				
-				<tr>
-				<td>
-					<label id='comentario'>por Nombre</label>
-				</td>
-				<td valign='top'  width='100' align='right'>
-						<input type='text' name='cpaterno' value='<?=$cpaterno?>'  size='14'>						
-				</td>
-				<td valign='top' width='16'>
-						<input type='image' src='images/lupa.png' onClick='np.look.value=2; np.submit()'>
-				</td>
-				<td />
 				</tr>
 					
 				</table>

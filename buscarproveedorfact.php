@@ -34,7 +34,8 @@ function limpiar($string )
 		{
 				
 			case '1':
-					$insert = "SELECT * FROM tbk_proveedor WHERE rut_pv LIKE '".trim($crut)."%'";
+				$insert ="SELECT *, MATCH(rut_pv,nombre_pv) AGAINST('".trim($crut)."') FROM tbk_proveedor WHERE MATCH(rut_pv,nombre_pv) AGAINST('".trim($crut)."')";
+					//$insert = "SELECT * FROM tbk_proveedor WHERE rut_pv LIKE '".trim($crut)."%'";
 					break;
 					
 		
@@ -111,24 +112,13 @@ function limpiar($string )
 			
 				<table border='0' cellspacing='5' cellpadding='5' width='450' background='images/logos/fondo_menu.jpg'>
 				<tr>
-				<td><label id='comentario'>Rut</label></td>
+				<td><label id='comentario'>Buscar por Rut o Nombre</label></td>
 				<td valign='top' align='right' width='100'>
 						<input type='text' name='crut' value='<?=limpiar($crut)?>' size='20' >	
 				</td>
 				<td valign='top' width='16'>
 						<input type='image' src='images/lupa.png' onClick='np.look.value=1; np.submit()'>
 				</td>
-				</tr>
-				
-				<tr>
-				<td><label id='comentario'>Nombre</label></td>
-				<td valign='top'  width='100' align='right'>
-						<input type='text' name='cpaterno' value='<?=$cpaterno?>'  size='20'>
-				</td>
-				<td valign='top' width='16'>
-						<input type='image' src='images/lupa.png' onClick='np.look.value=2; np.submit()'>
-				</td>
-				<td />
 				</tr>
 					
 				</table>

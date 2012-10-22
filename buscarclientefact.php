@@ -27,7 +27,8 @@ include("functions.php");
 		{
 				
 			case '1':
-					$insert = "SELECT * FROM tbk_cliente WHERE rut_cli LIKE '".trim($crut)."%'";
+			$insert ="SELECT *, MATCH(rut_cli,nombre_cli) AGAINST('".trim($crut)."') FROM tbk_cliente WHERE MATCH(rut_cli,nombre_cli) AGAINST('".trim($crut)."')";
+					//$insert = "SELECT * FROM tbk_cliente WHERE rut_cli LIKE '".trim($crut)."%'";
 					break;
 					
 		
