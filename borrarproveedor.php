@@ -18,7 +18,7 @@ function limpiar($string )
 
 	$cb 		= $_GET['cb'];
 	$see 		= $_POST['look'];
-	$delete		=$_POST['delete'];
+	$delete		=$_GET['delete'];
 	
 	$cpaterno		= $_POST['cpaterno'];
 	$erut 			= $_POST['erut'];
@@ -43,7 +43,11 @@ function limpiar($string )
 			case '2':
 					$insert = "SELECT * FROM tbk_proveedor WHERE nombre_pv LIKE '".trim($cpaterno)."%'";
 					break;
-			
+			case '9':
+				$insert ="DELETE FROM tbk_proveedor WHERE rut_pv = '".$delete."' ";
+					
+						break;
+				
 			
 		}
 		//echo "BUSCANDO=".$insert;
@@ -170,15 +174,50 @@ function limpiar($string )
 	
 	}
 	if($see==9){
+				$cb 			= $_POST['nrut'];
+				$nrut 			= $_POST['nrut'];
+				$cnombre		= $_POST['cnombre'];
+				$cpaterno 		= $_POST['cpaterno'];
+				$cmaterno		= $_POST['cmaterno'];
+				$cdireccion 	= $_POST['cdireccion'];
+				$cciudad	 	= $_POST['cciudad'];
+				$ccomuna		= $_POST['ccomuna'];
+				$cregion		= $_POST['cregion'];
+				$cpnombre		= $_POST['cpnombre'];
+				$cfono			= $_POST['cfono'];
+				$cemail			= $_POST['cemail'];
+				$ccodigorubro   = $_POST['ccodigorubro'];
+				$ccodigorubro2  = $_POST['ccodigorubro2'];
+				$cbanco1		= $_POST['cbanco1'];
+				$cnumerocuenta1 = $_POST['cnumerocuenta1'];
+				$cbanco2		= $_POST['cbanco2'];
+				$cnumerocuenta2 = $_POST['cnumerocuenta2'];
+				$cobs			= $_POST['cobs'];
+				$fechaingreso   = $_POST['fechaingreso'];
+				$ccodigorubro3  = $_POST['ccodigorubro3'];
+				
+				$insert ="DELETE FROM tbk_proveedor WHERE rut_pv = '".$nrut ."' ";
 	
-				$insert ="DELETE FROM tbk_proveedor WHERE rut_pv = '".$nrut."' ";
-						if ($resup = mysql_query($insert, $conn))
-				 {
-					$tipomensaje=1;
-						$texto = "Ficha del Proveedor  ha sido Borrado exitosamente ".$nrut."";
-						include("mensaje.php");}
-echo"$insert";
-	}
+				if ($resup = mysql_query($insert, $conn))
+				{
+						$tipomensaje=1;
+						$texto = "Ficha del Proveedor  ha sido actualizado exitosamente ".$nrut ." ";
+						include("mensaje.php");
+					
+					
+				}
+				else
+				{
+						$tipomensaje=0;
+						$texto = "Ficha del Proveedor  no ha sido actualizada. Contacte al administrador para m&aacute;s informaci&oacute;n.";
+						include("mensaje.php");
+					
+					
+				}
+						
+						}
+
+	
 
 	// echo $nombre."-".$cbarra."-".$um1."-".$valor1."-".$fam."-".$subfam;
 
@@ -242,10 +281,10 @@ echo"$insert";
 				<table border='0' cellspacing='5' cellpadding='5'>
 				<tr>
 				<td id='data' valign='bottom' align='center'>
-						<a  id='menualternativo' href='home.php'><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
+						<a  id='menualternativo' href='borrarproveedor.php'><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
 				</td>
 				<td id='data' valign='bottom'  align='center'>
-						<a id='menu' href='borrarproveedor.php?delete=<?php echo"$cb"?>' onClick='np.look.value="9"; submit()'><img src="images/logos/aceptar0.jpg" onmouseover="this.src = 'images/logos/aceptar1.jpg'" onmouseout="this.src = 'images/logos/aceptar0.jpg'" border="0"></img></a>
+						<a id='menu' href='#' onClick='np.look.value="9"; submit()'><img src="images/logos/aceptar0.jpg" onmouseover="this.src = 'images/logos/aceptar1.jpg'" onmouseout="this.src = 'images/logos/aceptar0.jpg'" border="0"></img></a>
 				</td>
 
 				</tr>
