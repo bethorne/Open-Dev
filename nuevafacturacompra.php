@@ -161,12 +161,12 @@ function limpiar($string )
 						<label id='comentario'>RUT</label>
 					</td>
 					<td id='data'>
-						<table border='0'><tr><td><input type='text' name='nrut' size='14'></td> <td> <a href="buscarproveedorfact.php" target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=700'); return false;"><img src='images/buscarcliente.png' border='0'></a></td></tr></table>
+						<table border='0'><tr><td><input type='text' name='nrut' size='14' onkeypress="return tabular(event,this)"></td> <td> <a href="buscarproveedorfact.php" target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=700'); return false;" onkeypress="return tabular(event,this)"><img src='images/buscarcliente.png' border='0'></a></td></tr></table>
 					</td>
 					<td id ='etiqueta' rowspan='5' valign='top' align='center'>
 						<br/><p/>
 						<font face='arial, times' size='4' color='#ffffff'> N° Documento</font> <p/>
-						<input type='text' class='num' name='IDfactura' value='' size='10'>
+						<input type='text' class='num' name='IDfactura' value='' size='10' onkeypress="return tabular(event,this)">
 					</td>
 					</tr>
 					
@@ -175,7 +175,7 @@ function limpiar($string )
 						<label id='comentario'>NOMBRE</label>
 					</td>
 					<td id='data'>
-						<input type='text' name='nnombre' size='50'><br/>
+						<input type='text' name='nnombre' size='50' onkeypress="return tabular(event,this)"><br/>
 
 					</td>
 					</tr>
@@ -185,7 +185,7 @@ function limpiar($string )
 						<label id='comentario'>FECHA</label>
 					</td>
 					<td id='data' >
-						<input type='text' name='fcfecha' value='<?=date('d-m-Y')?>' size='12'>
+						<input type='text' name='fcfecha' value='<?=date('d-m-Y')?>' size='12' onkeypress="return tabular(event,this)">
 					</td>
 					</tr>
 
@@ -195,7 +195,7 @@ function limpiar($string )
 
 					</td>
 					<td  id='data' >
-						<input type='text' name='fcdireccion' value='' size='50'>
+						<input type='text' name='fcdireccion' value='' size='50' onkeypress="return tabular(event,this)">
 					</td>
 					</tr>
 					
@@ -204,7 +204,7 @@ function limpiar($string )
 						<label id='comentario'>ACTIVIDAD ECONOMICA</label>
 					</td>
 					<td  id='data' >
-						<input type='text' name='fcgiro' value='<?=$ccodigorubro?>' size='50'>
+						<input type='text' name='fcgiro' value='<?=$ccodigorubro?>' size='50' onkeypress="return tabular(event,this)">
 					</td>
 					</tr>
 					</table>
@@ -222,7 +222,7 @@ function limpiar($string )
 			<tr>
 			<td id='etiqueta'  width='160'> TIPO DE DOCUMENTO </td>
 			<td id='data'> 
-				<SELECT name='fctipodoc'>
+				<SELECT name='fctipodoc' onkeypress="return tabular(event,this)">
 								
 				<option value='3'> FACTURA</option>
 				<option value='2'> GU&Iacute;A</option>
