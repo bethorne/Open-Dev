@@ -240,12 +240,14 @@ function limpiar($string )
 		
 				<table border='0' width='850'>
 				<tr>
-					<th id='etiqueta' WIDTH='150'> CODIGO (barras)</th>
-					<th id='etiqueta' WIDTH='205'> NOMBRE</th>
-					<th id='etiqueta' WIDTH='12'> CANTIDAD</th>
-					<th id='etiqueta' WIDTH='12'> RETIRO</br/>INMEDIATO</th>
+					
+					<th id='etiqueta' WIDTH='170'> NOMBRE</th>
+					<th id='etiqueta' WIDTH='5'> CANTIDAD</th>
+					<th id='etiqueta' WIDTH='10'> INGRESO</th>
 					<th id='etiqueta' WIDTH='100'> $ UNIDAD</th>
-                    						
+                    <th id='etiqueta' WIDTH='20'>DESC1</th>
+                    <th id='etiqueta' WIDTH='20'>DESC2</th>
+                    <th id='etiqueta' WIDTH='20'>DESC3</th>						
 					<th id='etiqueta'> TOTAL</th>
 				</tr>
 				</table>
@@ -262,8 +264,8 @@ function limpiar($string )
 				
 				<tr>
 				<td id='data'>
-					<input type='text' name='fcidpro<?=$p?>' size='3' readonly='readonly'>
-					<input type='text' name='fccbarras<?=$p?>' size='17' readonly='readonly'>
+					<input type='hidden' name='fcidpro<?=$p?>' size='3' readonly='readonly' >
+					<input type='hidden'  name='fccbarras<?=$p?>' size='17' readonly='readonly'>
 				</td>
 				<td id='data'>
 					<!-- <a href='elegirproducto.php' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=400'); return false;"><img src='images/binoculares.gif'></a> -->
@@ -271,7 +273,7 @@ function limpiar($string )
 				</td>
                 
 				<td id='data'>
-					<input type='text' name='fcnombrespro<?=$p?>' size='30' onkeypress="return tabular(event,this)">
+					<input type='text' name='fcnombrespro<?=$p?>' size='17' onkeypress="return tabular(event,this)">
 				</td>
 				<td id='data'>
 					<input type='text' name='fccantidadpro<?=$p?>' value='' size='3' onkeypress="return tabular(event,this)">
@@ -279,13 +281,22 @@ function limpiar($string )
 				<td id='etiqueta'>
 					<input type='text' name='fcdespachopro<?=$p?>' value='1' size='3' onkeypress="return tabular(event,this)">
 				</td>
+              
 				<td id='data'>
 					$
 				</td>
 				<td id='data'>
 					<input type='text' name='fcprecio<?=$p?>'  value='' size='12' onkeypress="return tabular(event,this)">
 				</td>
-                
+                  <td id='data'>
+					<input type='text' name='descuen1<?=$p?>' value='' size='3' onkeypress="return tabular(event,this)">
+				</td>
+                <td id='data'>
+					<input type='text' name='descuen2<?=$p?>' value='' size='3' onkeypress="return tabular(event,this)">
+				</td>
+                <td id='data'>
+					<input type='text' name='descuen3<?=$p?>' value='' size='3' onkeypress="return tabular(event,this)">
+				</td>
 				<td id='data'>
 					$
 				</td>
