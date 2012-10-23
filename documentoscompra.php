@@ -211,7 +211,9 @@
 							$total  	= $row[4];
 							$estado 	= $row[5];
 							$codigodoc 	= $row[6];
-							
+							$des1		= $row[7];
+							$des2		= $row[8];
+							$des3		= $row[9];
 							$proceso ="";
 							SWITCH($tipodoc)
 							{
@@ -223,6 +225,10 @@
 							
 							}
 							
+							 $preciodesc1 =$fvalorunitario*((100 - $des1)/100) ;
+                     		   $preciodesc2 =$preciodesc1*((100 - $des2)/100) ;
+                        		 $preciodesc3 =$preciodesc2*((100 - $des3)/100); 
+                        
 							echo "<tr><td id='data' width='20'><a id='etiquetazul' href='documentoscompra.php?cb=".$facturaID."' ><font size='4'>".$codigodoc."</font></a></td><td id='data'>".proveedorrut($clienteID)."</td><td id='data'>".$fechafact."</td><td id='data' align='right'>$ ".$total."</td><td id='data'>".$proceso."</td></tr>";
 							$i++;
 						}
@@ -309,7 +315,14 @@
 			<tr><td height='25' colspan='5'><hr/></td></tr>
 		
 			
-			<tr><td id='etiqueta'> Producto</td><td id='etiqueta'> Cantidad.</td><td id='etiqueta' width='30' > Pendiente<br/>Recepci&oacute;n</td><td id='etiqueta' width='30' >  $<br/>Unitario</td><td id='etiqueta' width='60' >  $<br/>Total</td></tr>
+			<tr><td id='etiqueta'> Producto</td>
+            <td id='etiqueta'> Cantidad.</td>
+            <td id='etiqueta' width='30' > Pendiente<br/>Recepci&oacute;n</td>
+            <td id='etiqueta' width='30' >  $<br/>Unitario</td>
+            <td id='etiqueta' width='30' >Desc1</td>
+            <td id='etiqueta' width='30' >Desc1</td>
+            <td id='etiqueta' width='30' >Desc1</td>
+            <td id='etiqueta' width='60' >  $<br/>Total</td></tr>
 					
 			<?php
 			
@@ -328,6 +341,9 @@
 						$pendiente		 	= $ficha2[5];
 						
 						$festado			= $ficha2[6];
+							$fdesc1			= $ficha2[7];
+							$fdesc2			= $ficha2[8];
+							$fdesc3			= $ficha2[9];
 					
 						
 						
@@ -364,10 +380,38 @@
 						
 						<?php if ($festado  == 1) echo "</s>" ?>
 					</td>
-					<td id='data' align='right' >
+                    
+                    <td id='data' align='right' >
+						<?php if ($festado  == 1) echo "<s>" ?>
+                        
+						
+						<label id='comentario'><?=$fdesc1?></label>
+						
+						<?php if ($festado  == 1) echo "</s>" ?>
+					</td>
+                    
+                      <td id='data' align='right' >
 						<?php if ($festado  == 1) echo "<s>" ?>
 						
-						<label id='comentario'><?=$fvalorunitario * $fcantidad?></label>
+						<label id='comentario'><?=$fdesc2?></label>
+						
+						<?php if ($festado  == 1) echo "</s>" ?>
+					</td>
+                      <td id='data' align='right' >
+						<?php if ($festado  == 1) echo "<s>" ?>
+						
+						<label id='comentario'><?=$fdesc3?></label>
+						
+						<?php if ($festado  == 1) echo "</s>" ?>
+					</td>
+                    
+					<td id='data' align='right' >
+						<?php if ($festado  == 1) echo "<s>" ?>
+						<?php $preciodesc1 =$fvalorunitario*((100 - $fdesc1)/100) ?>
+                        <?php $preciodesc2 =$preciodesc1*((100 - $fdesc2)/100) ?>
+                        <?php $preciodesc3 =$preciodesc2*((100 - $fdesc3)/100) ?>
+                        
+						<label id='comentario'><?=round($preciodesc3)?></label>
 						
 						<?php if ($festado  == 1) echo "</s>" ?>
 					</td>

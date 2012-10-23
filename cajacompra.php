@@ -23,9 +23,8 @@
 	$fctotal		= limpiar($_POST['fctotal']);	
 	$usuario		= limpiar($_POST['usuario']);
 	$fcobs			= limpiar($_POST['fcobs']);
-		$fcdecto			= limpiar($_POST['fcdecto']);
-			$fcdecto			= limpiar($_POST['fcdecto']);
-				$fcdecto			= limpiar($_POST['fcdecto']);
+	
+		
 
 	
 	// guardar documento
@@ -69,6 +68,9 @@
 			echo "<td id='etiqueta'> NOMBRE</td>";
 			echo "<td id='etiqueta'> CANTIDAD</td>";
 			echo "<td id='etiqueta'> PRECIO</td>";
+			echo "<td id='etiqueta'> DESC1</td>";
+			echo "<td id='etiqueta'> DESC2</td>";
+			echo "<td id='etiqueta'> DESC3</td>";
 			echo "<td id='etiqueta'> $ TOTAL </td>";
 
 			//echo "<td id='etiqueta'> STOCK PREVIO</td>";
@@ -88,6 +90,9 @@
 				$precio 		= limpiar($_POST['fcprecio'.$i]);
 				$columna 		= limpiar($_POST['fccolumna'.$i]);
 				$estado 		= limpiar($_POST['fcestado'.$i]);
+				$fcdecto1		= limpiar($_POST['descuen1'.$i]);
+				$fcdecto2		= limpiar($_POST['descuen2'.$i]);
+				$fcdecto3		= limpiar($_POST['descuen3'.$i]);
 				
 				if (!empty($codigo))
 				{
@@ -309,11 +314,14 @@
 						$insert.= "'".$cantidad."',";
 						$insert.= "'".$precio."',";
 						$insert.= "'".$totaldespacho."',";
-						$insert.= "'".$estado."'";
+						$insert.= "'".$estado."',";
+						$insert.= "'".$fcdecto1."',";
+						$insert.= "'".$fcdecto2."',";
+						$insert.= "'".$fcdecto3."'";
 
 						$insert.= ")";						
 						
-						//echo "<br/>".$insert."</br/>";
+					//	echo "<br/>".$insert."</br/>";
 						if ($resip = mysql_query($insert,$conn))
 						{
 									//echo " <br/> Producto ".$codigo." ingresado.";
@@ -347,6 +355,9 @@
 						echo '<td id="data" align="right">'.$cantidad.'</td>';
 						echo '<td id="data" align="right">$ '.$precio.'</td>';
 						$colum=$cantidad*$precio;
+						echo '<td id="data" align="right">$ '.$fcdecto1.'</td>';
+						echo '<td id="data" align="right">$ '.$fcdecto2.'</td>';
+						echo '<td id="data" align="right">$ '.$fcdecto3.'</td>';
 						echo '<td id="data" align="right">$ '.$colum.'</td>';
 
 						//echo '<td id="data" align="right">0</td>';
@@ -438,7 +449,10 @@
 						$insert.= "'".$cantidad."',";
 						$insert.= "'".$precio."',";
 						$insert.= "'".$totaldespacho."',";
-						$insert.= "'".$estado."'";
+						$insert.= "'".$estado."',";
+						$insert.= "'".$fcdecto1."',";
+						$insert.= "'".$fcdecto2."',";
+						$insert.= "'".$fcdecto3."'";
 
 						$insert.= ")";						
 						
