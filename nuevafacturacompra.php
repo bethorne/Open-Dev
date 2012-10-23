@@ -255,7 +255,7 @@ function limpiar($string )
 		<?php
 			
 			$p=0;
-			for($p=1; $p <= 20; $p++)
+			for($p=1; $p <= 15; $p++)
 			{
 			
 			?>
