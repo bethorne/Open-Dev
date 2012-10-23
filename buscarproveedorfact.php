@@ -3,8 +3,6 @@
 
 <?php
 
-
-
 function limpiar($string )
 {
 
