@@ -245,9 +245,9 @@ function limpiar($string )
 					<th id='etiqueta' WIDTH='5'> CANTIDAD</th>
 					<th id='etiqueta' WIDTH='10'> INGRESO</th>
 					<th id='etiqueta' WIDTH='100'> $ UNIDAD</th>
-                    <th id='etiqueta' WIDTH='20'>DESC1</th>
-                    <th id='etiqueta' WIDTH='20'>DESC2</th>
-                    <th id='etiqueta' WIDTH='20'>DESC3</th>						
+                    <th id='etiqueta' WIDTH='20'>DESC1%</th>
+                    <th id='etiqueta' WIDTH='20'>DESC2%</th>
+                    <th id='etiqueta' WIDTH='20'>DESC3%</th>						
 					<th id='etiqueta'> TOTAL</th>
 				</tr>
 				</table>

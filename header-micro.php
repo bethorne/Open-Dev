@@ -202,61 +202,144 @@ error_reporting(0);
 			if (posicion == '1' )
 			 {
 				
-				 
-				 boleta.fccolumna1.value= boleta.fccantidadpro1.value * boleta.fcprecio1.value; 
-			 
+				descuento1=boleta.fcprecio1.value * ((100 - boleta.descuen11.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen21.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen31.value )/100);
+				 boleta.fccolumna1.value = Math.round(descuento3 * boleta.fccantidadpro1.value) ;
 			 
 			 }
 			if (posicion == '2' ) 
 			{ 
-			boleta.fccolumna2.value= boleta.fccantidadpro2.value * boleta.fcprecio2.value;
 			
+			
+				descuento1=boleta.fcprecio2.value * ((100 - boleta.descuen12.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen22.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen32.value )/100);
+				 boleta.fccolumna2.value = Math.round(descuento3 * boleta.fccantidadpro2.value) ;
+			 
 			}
 			if (posicion == '3' ) {
 				
-				 boleta.fccolumna3.value= boleta.fccantidadpro3.value * boleta.fcprecio3.value;
-				 
+				
+				 descuento1=boleta.fcprecio3.value * ((100 - boleta.descuen13.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen23.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen33.value )/100);
+				 boleta.fccolumna3.value = Math.round(descuento3 * boleta.fccantidadpro2.value) ;
 				  }
 			if (posicion == '4' ) {
-				
-				 boleta.fccolumna4.value= boleta.fccantidadpro4.value * boleta.fcprecio4.value; 
-				 
+				descuento1=boleta.fcprecio4.value * ((100 - boleta.descuen14.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen24.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen34.value )/100);
+				 boleta.fccolumna4.value = Math.round(descuento3 * boleta.fccantidadpro4.value) ;
 				 }
 			if (posicion == '5' ) { 
 			
-			boleta.fccolumna5.value= boleta.fccantidadpro5.value * boleta.fcprecio5.value;
+			descuento1=boleta.fcprecio5.value * ((100 - boleta.descuen15.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen25.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen35.value )/100);
+				 boleta.fccolumna5.value = Math.round(descuento3 * boleta.fccantidadpro5.value) ;
 			}
 			if (posicion == '6' ) {
 				
-				 boleta.fccolumna6.value= boleta.fccantidadpro6.value * boleta.fcprecio6.value; }
+				 descuento1=boleta.fcprecio6.value * ((100 - boleta.descuen16.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen26.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen36.value )/100);
+				 boleta.fccolumna6.value = Math.round(descuento3 * boleta.fccantidadpro6.value) ;
+			}
+				 
 			if (posicion == '7' ) {
-				 boleta.fccolumna7.value= boleta.fccantidadpro7.value * boleta.fcprecio7.value; }
+				
+				 descuento1=boleta.fcprecio7.value * ((100 - boleta.descuen17.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen27.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen37.value )/100);
+				 boleta.fccolumna7.value = Math.round(descuento3 * boleta.fccantidadpro7.value) ;
+			}
 			if (posicion == '8' ) {
-				 boleta.fccolumna8.value= boleta.fccantidadpro8.value * boleta.fcprecio8.value; }
+				 
+				  descuento1=boleta.fcprecio8.value * ((100 - boleta.descuen18.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen28.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen38.value )/100);
+				 boleta.fccolumna8.value = Math.round(descuento3 * boleta.fccantidadpro8.value) ;
+			}
+				 
 			if (posicion == '9' ) {
-				 boleta.fccolumna9.value= boleta.fccantidadpro9.value * boleta.fcprecio9.value; }
+				 
+				  descuento1=boleta.fcprecio9.value * ((100 - boleta.descuen19.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen29.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen39.value )/100);
+				 boleta.fccolumna9.value = Math.round(descuento3 * boleta.fccantidadpro9.value) ;
+			}
+				 
 			if (posicion == '10' ) {
-				 boleta.fccolumna10.value= boleta.fccantidadpro10.value * boleta.fcprecio10.value; }
+				descuento1=boleta.fcprecio10.value * ((100 - boleta.descuen110.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen210.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen310.value )/100);
+				 boleta.fccolumna10.value = Math.round(descuento3 * boleta.fccantidadpro10.value) ;
+				 
+				  }
 			if (posicion == '11' ) {
-				 boleta.fccolumna11.value= boleta.fccantidadpro11.value * boleta.fcprecio11.value; }
+				 
+				 descuento1=boleta.fcprecio11.value * ((100 - boleta.descuen111.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen211.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen311.value )/100);
+				 boleta.fccolumna11.value = Math.round(descuento3 * boleta.fccantidadpro11.value) ;
+				 
+				  }
 			if (posicion == '12' ) {
-				 boleta.fccolumna12.value= boleta.fccantidadpro12.value * boleta.fcprecio12.value; }
+				 descuento1=boleta.fcprecio12.value * ((100 - boleta.descuen112.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen212.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen312.value )/100);
+				 boleta.fccolumna12.value = Math.round(descuento3 * boleta.fccantidadpro12.value) ;
+				 }
 			if (posicion == '13' ) {
-				 boleta.fccolumna13.value= boleta.fccantidadpro13.value * boleta.fcprecio13.value; }
+				descuento1=boleta.fcprecio13.value * ((100 - boleta.descuen113.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen213.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen313.value )/100);
+				 boleta.fccolumna13.value = Math.round(descuento3 * boleta.fccantidadpro13.value) ;
+				 }
 			if (posicion == '14' ) {
-				 boleta.fccolumna14.value= boleta.fccantidadpro14.value * boleta.fcprecio14.value; }
+				 descuento1=boleta.fcprecio14.value * ((100 - boleta.descuen114.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen214.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen314.value )/100);
+				 boleta.fccolumna14.value = Math.round(descuento3 * boleta.fccantidadpro14.value) ;
+				 }
 			if (posicion == '15' ) {
-				 boleta.fccolumna15.value= boleta.fccantidadpro15.value * boleta.fcprecio15.value; }
+				 descuento1=boleta.fcprecio15.value * ((100 - boleta.descuen115.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen215.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen315.value )/100);
+				 boleta.fccolumna15.value = Math.round(descuento3 * boleta.fccantidadpro15.value) ;
+				  }
 			if (posicion == '16' ) { 
-			boleta.fccolumna16.value= boleta.fccantidadpro16.value * boleta.fcprecio16.value; }
+			descuento1=boleta.fcprecio16.value * ((100 - boleta.descuen116.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen216.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen316.value )/100);
+				 boleta.fccolumna16.value = Math.round(descuento3 * boleta.fccantidadpro16.value) ;
+				  }
 			if (posicion == '17' ) {
-				 boleta.fccolumna17.value= boleta.fccantidadpro17.value * boleta.fcprecio17.value; }
+				descuento1=boleta.fcprecio17.value * ((100 - boleta.descuen117.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen217.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen317.value )/100);
+				 boleta.fccolumna17.value = Math.round(descuento3 * boleta.fccantidadpro17.value) ;
+				 }
 			if (posicion == '18' ) {
-				 boleta.fccolumna18.value= boleta.fccantidadpro18.value * boleta.fcprecio18.value; }
+				descuento1=boleta.fcprecio18.value * ((100 - boleta.descuen118.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen218.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen318.value )/100);
+				 boleta.fccolumna18.value = Math.round(descuento3 * boleta.fccantidadpro18.value) ;
+				 }
 			if (posicion == '19' ) { 
-			boleta.fccolumna19.value= boleta.fccantidadpro19.value * boleta.fcprecio19.value; }
+			descuento1=boleta.fcprecio19.value * ((100 - boleta.descuen1919.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen219.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen319.value )/100);
+				 boleta.fccolumna19.value = Math.round(descuento3 * boleta.fccantidadpro19.value) ;
+				  }
 			if (posicion == '20' ) {
-				 boleta.fccolumna20.value= boleta.fccantidadpro20.value * boleta.fcprecio20.value; }
+				
+				 descuento1=boleta.fcprecio20.value * ((100 - boleta.descuen120.value )/100);
+				descuento2=descuento1 * ((100 - boleta.descuen220.value )/100);
+				descuento3=descuento2 * ((100 - boleta.descuen320.value )/100);
+				 boleta.fccolumna20.value = Math.round(descuento3 * boleta.fccantidadpro20.value) ;
+				 }
 			
 			
 			
