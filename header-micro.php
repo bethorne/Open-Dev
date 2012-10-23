@@ -418,7 +418,7 @@ error_reporting(0);
 			if (boleta.fctipodoc.value == 3)
 			{
 				
-				totaliva =  (totalneto * 19 ) / 100 ;
+				totaliva =  (totalneto * <?=$iva?> ) / 100 ;
 			}
 			
 			
