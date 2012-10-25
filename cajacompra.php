@@ -13,6 +13,7 @@
 	
 	$doc = "";
 	if ($tipodocumento == 0) $doc = "BOLETA";
+	if ($tipodocumento == 2) $doc = "GUIA";
 	if ($tipodocumento == 1) $doc = "FACTURA";
 	
 	$nrut  			= limpiar($_POST['nrut']);

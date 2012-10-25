@@ -430,11 +430,15 @@ error_reporting(0);
 			
 			if (boleta.fctipodoc.value == 2)
 			{
-				totalfactura  = 0;
-				boleta.fcneto.value = 0; 
-				boleta.fctotal.value  = 0;
+					totaliva =  (totalneto * <?=$iva?> ) / 100 ;
 			}
 			
+			
+			boleta.fciva.value = Math.round(totaliva);
+			
+			totalfactura  = totalneto +  totaliva;
+			
+			boleta.fctotal.value  = Math.round(totalfactura);
 			
 			
 			return true
