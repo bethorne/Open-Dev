@@ -269,7 +269,7 @@ function limpiar($string )
 				</td>
 				<td id='data'>
 					<!-- <a href='elegirproducto.php' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=400'); return false;"><img src='images/binoculares.gif'></a> -->
-					<a href='elegirproductocompra.php?pos=<?=$p?>' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=400'); return false;"><img src='images/binoculares.gif'></a>
+					<a href='elegirproductocompra.php?pos=<?=$p?>' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=1000,height=500'); return false;"><img src='images/binoculares.gif'></a>
 				</td>
                 
 				<td id='data'>

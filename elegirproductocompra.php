@@ -19,9 +19,8 @@ function limpiar($string )
 	$see 		= $_POST['look'];
 
 	$pos 		= $_GET['pos'];
-
-
-	$nombre		= $_POST['nombre'];
+	
+		$nombre		= $_POST['nombre'];
 	$cbarra 	= $_POST['cbarra'];
 	$marca 		= $_POST['marca'];
 	$modelo 	= $_POST['modelo'];
@@ -41,7 +40,7 @@ function limpiar($string )
 		{
 				
 			case '1':
-					$insert = "SELECT * FROM tbk_producto WHERE nombre_pro LIKE '".trim($nombre)."%'";
+					$insert = "SELECT * FROM tbk_producto WHERE nombre_pro LIKE '".trim($nombre)."%'  ";
 					break;
 					
 		
@@ -105,9 +104,15 @@ function limpiar($string )
 	<br/>
 	<label id='comentariogris'> Complete uno de los campos para realizar la b&uacute;squeda. Si desea listar todos los productos, haga click en 'buscar nombre' con el campo vac&iacute;o.</label>
 	<hr/>
-	<p/>
-
-
+	
+    <a  target="popup"  onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;" href='nuevo_productocompra.php'>Nuevo Producto</a>
+<?php if(empty($_GET['nuewwro']))
+		{   
+		} 
+		else{
+		echo"Su nuevo producto es :".$_GET['nuewwro']."";
+			}
+?>
 	<form name='np' action='elegirproductocompra.php?pos=<?=$pos?>' method ='POST'>
 
 	<table border='0'>

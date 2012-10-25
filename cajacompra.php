@@ -419,7 +419,7 @@
 								
 								$insert2.= ")";
 								
-								//echo "SQL::".$insert2;
+								echo "SQL::".$insert2;
 							
 								$flagvalor=0;
 								if ($inspro = mysql_query($insert2, $conn))
