@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+ 	<?php include('header.php') ?>
 
 <?php
 
@@ -401,6 +401,7 @@
 					echo "			<p/>";
 					echo "			<ul>";
 					echo "				<li><a id='mainmenu' href='ip.php'>&Iacute;ndice de Pagos</a></li>";
+					echo "				<li><a id='mainmenu' href='actualizar.php'>Actualizar Base de dato</a></li>";
 					echo "			</ul>";
 					echo "			</li>";
 
