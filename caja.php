@@ -1,4 +1,4 @@
-<?php include("header-micro.php")?>
+<?php include("header-zero.php")?>
 
 
 <?php
@@ -211,7 +211,7 @@
 
 
 <center>
-<table border='0' width='890' height='400'>
+<table align="center" border='0' width='100%' height='100%'>
 <tr>
 <td valign='top' >
 	
@@ -225,69 +225,65 @@
 	<form name='np' action='caja.php?IDcliente=<?=$IDcliente?>&tp=<?=$tp?>' method ='POST'>
 	
 	
-	<table border='0'>
+	<table border='0' width="100%" height="100%">
 	<tr>
-	<td width='600' valign='top'>
-
-			<textarea name='lista' rows='25' cols='80'  readonly = 'readonly'><?=$lista?></textarea>
-			<p/>
-
-			
-	</td>		
 	<td valign='top'>
-			
-			
-			<table border='0' cellspacing='3' cellpadding='3'>
-			<tr>
-			<td id='etiqueta'>
-				Codigo Producto
-			
-			</td>
-			<td>
-				<input type='text' name='codigo' value='' size='20'>
-			</td>
-			<td id='data'>
-						<!-- <a href='elegirproducto.php' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=400'); return false;"><img src='images/binoculares.gif'></a> -->
-						<a href='betho/buscadorFullText/formBuscar.php?pos=<?=$p?>' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=800,height=900 , scrollbars=yes'); return false;"><img src='images/binoculares.gif'></a>
-			</td>
-			<td id='etiqueta'>
-				Cantidad
-			
-			</td>
-			<td>
-				<input type='text' name='cantidad' value='' size='7'>
-			</td>
-			</tr>
-			</table>
-			<br/>
-			<table border='0'>
-			<tr>
-
-			<td id='menu' colspan='5'>
-				C&oacute;digo producto a eliminar <input type='text' name='eliminar' value='' size='15'> (Presione OK)
-			</td>
-			</tr>
-			</table>
-			
-			<p/>
-			<input type='hidden' name='IDcliente' value='<?=$IDcliente?>'>
-
-
-			<table border='0' cellspacing='5' cellpadding='5' >
-					<tr>
-					<td id='data' valign='bottom' align='center'>
-							<a  id='menualternativo' href='#' onClick='np.lista.value=""' ><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
-					</td>
-					<td id='data' valign='bottom'  align='center'>
-							<a id='menu' href='#'  onCLick='submit()'><img src="images/logos/aceptar0.jpg" onmouseover="this.src = 'images/logos/aceptar1.jpg'" onmouseout="this.src = 'images/logos/aceptar0.jpg'" border="0"></img></a>
-					</td>
-					<td id='data' valign='bottom'  align='center'>
-							<a id='menu' href='#'   onClick='document.np.action="generadocumento.php"; submit()'><img src="images/logos/vale0.jpg" onmouseover="this.src = 'images/logos/vale1.jpg'" onmouseout="this.src = 'images/logos/vale0.jpg'" border="0"></img></a>
-					</td>
-					</tr>
-			</table>
-
-	</td>
+	  
+	  
+	  <table border='0' cellspacing='3' cellpadding='3'>
+	    <tr>
+	      <td id='titulo'>
+	        Codigo Producto
+	        
+	        </td>
+	      <td>
+	        <input type='text' name='codigo' value='' size='20'>
+	        </td>
+	      <td id='data'>
+	        <!-- <a href='elegirproducto.php' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=600,height=400'); return false;"><img src='images/binoculares.gif'></a> -->
+	        <a href='betho/buscadorFullText/formBuscar.php?pos=<?=$p?>' id='menublanco' target="popup"  onClick="window.open(this.href, this.target, 'width=800,height=900 , scrollbars=yes'); return false;"><img src='images/binoculares.gif'></a>
+	        </td>
+	      <td id='titulo'>
+	        Cantidad
+	        
+	        </td>
+	      <td>
+	        <input type='text' name='cantidad' value='' onblur='submit()' size='7'>
+	        </td>
+          
+            
+	      
+	      <td id='menu' colspan='5'>
+	        C&oacute;digo producto a eliminar <input type='text' name='eliminar' value='' size='15'> (Presione OK)
+	       
+            </td>
+	      </tr>
+          
+	    </table>
+	  <br/>
+	  
+	  
+	  <p/>
+	  <textarea name='lista' rows='20' cols='100'  readonly = 'readonly'><?=$lista?>
+			  </textarea>            
+	  <input type='hidden' name='IDcliente' value='<?=$IDcliente?>'>
+	  
+	  
+	  <table border='0' cellspacing='5' cellpadding='5' >
+	    <tr>
+	      <td id='data' valign='bottom' align='center'>
+	        <a  id='menualternativo' href='#' onClick='np.lista.value=""' ><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
+	        </td>
+	      <td id='data' valign='bottom'  align='center'>
+	        <a id='menu' href='#'  onCLick='submit()'><img src="images/logos/aceptar0.jpg" onmouseover="this.src = 'images/logos/aceptar1.jpg'" onmouseout="this.src = 'images/logos/aceptar0.jpg'" border="0"></img></a>
+	        </td>
+	      <td id='data' valign='bottom'  align='center'>
+	        <a id='menu' href='#'   onClick='document.np.action="generadocumento.php"; submit()'><img src="images/logos/vale0.jpg" onmouseover="this.src = 'images/logos/vale1.jpg'" onmouseout="this.src = 'images/logos/vale0.jpg'" border="0"></img></a>
+	        </td>
+	      </tr>
+	    </table>
+	  
+	  </td>
 	</tr>
 	</table>
 	

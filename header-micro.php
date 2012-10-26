@@ -568,7 +568,7 @@ error_reporting(0);
 	textarea
 	{
 		font-family: Verdana, Arial;
-		font-size:9px;
+		font-size:24px;
 		color:#333;
 		border: solid 1px #ccc;
 	}	
