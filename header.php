@@ -65,7 +65,7 @@ if ($_GET[s] =="x")
 	<script language="JavaScript" src="scripts/javascript/calendar_db.js"></script> 
 	<link rel="stylesheet" href="scripts/javascript/calendar.css"> 
  
-
+<link rel="stylesheet" href="css/style.css"> 
 
 
 	<SCRIPT language="javascript">

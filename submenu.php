@@ -31,6 +31,17 @@
 				
 					echo "			</ul>";
 					echo "			</li>";
+					echo "			<li> <label id='titulomainmenu'>CENTRO COSTOS</label>";
+					echo "			<ul>";
+					echo "				<li><a id='mainmenu' href='centrocostos.php'>Centro de Costos</a></li>";
+					echo "			</ul>";
+					echo "			</li>";
+					echo "			<li> <label id='titulomainmenu'>PAGOS Y CTA. CORRIENTE</label>";
+					echo "			<ul>";
+					echo "				<li><a id='mainmenu' href='pagofacturapro.php'>Pagos de Facturas</a></li>";
+					echo "				<li><a id='mainmenu' href='cuentacorrientepro.php'>Cartola Cuenta Corriente</a></li>";
+					echo "			</ul>";
+					echo "			</li>";
 					echo " </td>";
 					
 					echo " <td style=' background-color:#FFF; z-index:5;  border-bottom-left-radius:30px; border-top-right-radius:30px; box-shadow: 5px 5px 5px #999;'  id='mainmenu' valign='top' height='400'  background='images/logos/fondo_menu.jpg'  >";

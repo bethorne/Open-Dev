@@ -17,6 +17,7 @@ $result=mysql_query("CREATE TABLE IF NOT EXISTS `tbk_docprocompras` (
   `descuen1` bigint(20) DEFAULT NULL,
   `descuen2` bigint(20) DEFAULT NULL,
   `descuen3` bigint(20) DEFAULT NULL,
+  `fcpago` INT( 1 ) DEFAULT NULL
   KEY `cbarra_pro` (`cbarra_pro`),
   KEY `tipodespacho_fpc` (`tipodespacho_fpc`),
   KEY `id_fact` (`id_docc`)
