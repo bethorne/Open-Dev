@@ -17,11 +17,10 @@ $result=mysql_query("CREATE TABLE IF NOT EXISTS tbk_docprocompra (
   descuen1 bigint(20) DEFAULT NULL,
   descuen2 bigint(20) DEFAULT NULL,
   descuen3 bigint(20) DEFAULT NULL,
-  fcpago INT( 1 ) DEFAULT NULL
+  fcpago bigint(1) DEFAULT NULL,
   KEY cbarra_pro (cbarra_pro),
   KEY tipodespacho_fpc (tipodespacho_fpc),
-  KEY id_fact (id_docc)
-)",$link);
+  KEY id_fact (id_docc) )",$link);
 # para crear un campo unico y autonumerico seria:
 # id smallint not null auto_increment, primary key(id)
 if($result==0)
