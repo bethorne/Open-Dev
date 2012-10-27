@@ -11,7 +11,7 @@
 	
 		
 			//$searchgv = "SELECT * FROM tbk_documento WHERE tipo_doc = 2  AND estado_doc = 1 AND SUBSTR(fecha_doc, 7,4) = '".$yearguia."'  AND SUBSTR(fecha_doc, 4,2) ='".$periodo."' ORDER BY  rut_cli ASC";
-			$searchgv="SELECT * FROM tbk_documentocompra WHERE codigo_docc <>  '' AND SUBSTR( fecha_docc, 4, 2 ) =  '".$periodo."' AND SUBSTR( fecha_docc, 7, 4 ) =  '".$yearguia."' ORDER BY fecha_docc";
+			$searchgv="SELECT * FROM tbk_documentocompra WHERE codigo_docc <>  '' AND SUBSTR( fecha_docc, 4, 2 ) =  '".$periodo."' AND SUBSTR( fecha_docc, 7, 4 ) =  '".$yearguia."' AND tipo_docc =3 ORDER BY fecha_docc";
 		
 			$busca = 1;
 	}

@@ -8,7 +8,10 @@
 	// revision de la factura antes de grabar
 	
 	$tipodocumento 	= limpiar($_POST['fctipodoc']);
+	$estadopago		= limpiar($_POST['fcpago']);
+	
 	$IDfactura		= limpiar($_POST['IDfactura']);
+	$obs			= limpiar($_POST['fcobs']);
 	
 	
 	$doc = "";
@@ -29,6 +32,31 @@
 
 	
 	// guardar documento
+	if($doc = "BOLETA"){
+		
+			$fechakdx = date('Y-m-d H:i');
+
+						$insertarbb =" INSERT INTO tbk_gasto VALUES (";
+						$insertarbb .= "'',";
+						$insertarbb .= "'".$fechakdx."',";
+						$insertarbb .= "'".$fctotal."',";
+						$insertarbb .= "'".$fcobs."',";
+						$insertarbb .= "'".$nrut."'";
+						$insertarbb .= ")";
+						
+						if ($res = mysql_query($insertarbb, $conn))
+						{
+							$tipomensaje=1;
+							$texto = "El gasto ha sido registrado exitosamente";
+							include("mensaje.php");
+							
+						
+						}
+		
+		
+		}
+	
+	
 	
 	$insfc  = "INSERT INTO tbk_documentocompra VALUES (";
 	
@@ -318,7 +346,8 @@
 						$insert.= "'".$estado."',";
 						$insert.= "'".$fcdecto1."',";
 						$insert.= "'".$fcdecto2."',";
-						$insert.= "'".$fcdecto3."'";
+						$insert.= "'".$fcdecto3."',";
+						$insert.= "'".$estadopago."'";
 
 						$insert.= ")";						
 						
@@ -346,6 +375,10 @@
 									//echo $insertkdx;
 									if ($reskdx  = mysql_query($insertkdx, $conn)) echo "<p/>OK KARDEX<p/>";
 									// -----------------------------------------------------------------------
+								
+								
+								
+								
 								
 						}
 						

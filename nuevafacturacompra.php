@@ -229,6 +229,13 @@ function limpiar($string )
 				<option value='1'> BOLETA</option>
 				</SELECT>
 			</td>
+            <td id='etiqueta'  width='160'>COMPRA AL </td> 	
+            <td id='data'> 
+				<SELECT name='fcpago' onkeypress="return tabular(event,this)">
+				<option value='2'> CONTADO</option>
+				<option value='1'> CREDITO</option>
+				</SELECT>
+			</td>
 			</tr>
 			</table>
 	</td>

@@ -2,8 +2,9 @@
 include("conector/conector.php");
 include("functions.php");
 include("header-zero.php");
-$today = date(d."-".m."-".Y); 
-$insert="SELECT * FROM tbk_gasto WHERE fecha_gas=".$today." ";
+$today = date('Y-m-d ');
+
+$insert="SELECT * FROM  tbk_gasto WHERE fecha_gas LIKE  '%".$today ."%'   ";
 
 if($res = mysql_query($insert ))
 		{
@@ -44,7 +45,7 @@ if($res = mysql_query($insert ))
 						 	
 							 echo"<table  >
 								  <tr>
- 								<td    id='etiqueta'  ><font size='4'>".$fecha."</font></td>
+ 								<td    id='etiqueta'  ><font size='4'>".SUBSTR( $fecha, 0, 10)."</font></td>
 									
 									<td width='300'  id='data'><font size='4'>".$obs."</font></td>
 									<td width='78' id='data'><font size='4'>$".$cantidad."</font></td>
