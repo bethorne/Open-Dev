@@ -1,7 +1,7 @@
 <?php
 #www.lawebdelprogramador.com
 #Crear Tabla
-$link=mysql_connect("localhost","root","");
+$link=mysql_connect("localhost","root","root");
 
 //abrimos la base de datos
 mysql_select_db("baro",$link);
