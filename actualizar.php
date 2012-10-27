@@ -6,7 +6,7 @@ $link=mysql_connect("localhost","root","root");
 //abrimos la base de datos
 mysql_select_db("baro",$link);
 
-$result=mysql_query("CREATE TABLE IF NOT EXISTS `tbk_docprocompras` (
+$result=mysql_query("CREATE TABLE IF NOT EXISTS `tbk_docprocompra` (
   `id_docc` bigint(20) NOT NULL,
   `cbarra_pro` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `tipodespacho_fpc` int(2) DEFAULT NULL,
