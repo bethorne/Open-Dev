@@ -14,10 +14,7 @@
 	$obs			= limpiar($_POST['fcobs']);
 	
 	
-	$doc = "";
-	if ($tipodocumento == 0) $doc = "BOLETA";
-	if ($tipodocumento == 2) $doc = "GUIA";
-	if ($tipodocumento == 1) $doc = "FACTURA";
+	
 	
 	$nrut  			= limpiar($_POST['nrut']);
 	$fcfecha		= limpiar($_POST['fcfecha']);
@@ -30,31 +27,16 @@
 	
 		
 
+	$doc = "";
+	if ($tipodocumento == 1) 
+	$doc = "BOLETA";
+	if ($tipodocumento == 2) 
+	$doc = "GUIA";
+	if ($tipodocumento == 3) 
+	$doc = "FACTURA";
 	
 	// guardar documento
-	if($doc = "BOLETA"){
-		
-			$fechakdx = date('Y-m-d H:i');
-
-						$insertarbb =" INSERT INTO tbk_gasto VALUES (";
-						$insertarbb .= "'',";
-						$insertarbb .= "'".$fechakdx."',";
-						$insertarbb .= "'".$fctotal."',";
-						$insertarbb .= "'".$fcobs."',";
-						$insertarbb .= "'".$nrut."'";
-						$insertarbb .= ")";
-						
-						if ($res = mysql_query($insertarbb, $conn))
-						{
-							$tipomensaje=1;
-							$texto = "El gasto ha sido registrado exitosamente";
-							include("mensaje.php");
-							
-						
-						}
-		
-		
-		}
+	
 	
 	
 	
@@ -69,12 +51,36 @@
 	$insfc.= "'".$IDfactura."',";
 	$insfc.= "'".$usuario."',";
 	$insfc.= "'".$fcobs."',";
+	$insfc.= "'',";
+	$insfc.= "'".$estadopago."',";
 	$insfc.= "''";
-	
 	$insfc.=")";
 	
-	//echo "  SQL :: ".$insfc;
-	
+	echo"$estadopago";
+	 echo "  SQL :: ".$insfc;
+	if($doc == "BOLETA"){
+		
+			$fechakdx = date('Y-m-d H:i');
+
+						$insertarbb =" INSERT INTO tbk_gasto VALUES (";
+						$insertarbb .= "'',";
+						$insertarbb .= "'".$fechakdx."',";
+						$insertarbb .= "'".$fctotal."',";
+						$insertarbb .= "'".$fcobs."',";
+						$insertarbb .= "'".$nrut."'";
+						$insertarbb .= ")";
+						echo"$tipodocumento";
+						if ($res = mysql_query($insertarbb, $conn))
+						{
+							$tipomensaje=1;
+							$texto = "El gasto ha sido registrado exitosamente";
+							include("mensaje.php");
+							
+						
+						}
+		
+		
+		}
 	if ($insfac= mysql_query($insfc, $conn))
 	{
 
@@ -347,7 +353,7 @@
 						$insert.= "'".$fcdecto1."',";
 						$insert.= "'".$fcdecto2."',";
 						$insert.= "'".$fcdecto3."',";
-						$insert.= "'".$estadopago."'";
+						$insert.= "'".	"'";
 
 						$insert.= ")";						
 						

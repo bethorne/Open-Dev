@@ -222,7 +222,7 @@ function limpiar($string )
 			<tr>
 			<td id='etiqueta'  width='160'> TIPO DE DOCUMENTO </td>
 			<td id='data'> 
-				<SELECT name='fctipodoc' onkeypress="return tabular(event,this)">
+				<SELECT name='fctipodoc' >
 								
 				<option value='3'> FACTURA</option>
 				<option value='2'> GU&Iacute;A</option>
@@ -231,7 +231,7 @@ function limpiar($string )
 			</td>
             <td id='etiqueta'  width='160'>COMPRA AL </td> 	
             <td id='data'> 
-				<SELECT name='fcpago' onkeypress="return tabular(event,this)">
+				<SELECT name='fcpago' >
 				<option value='2'> CONTADO</option>
 				<option value='1'> CREDITO</option>
 				</SELECT>

@@ -1,6 +1,5 @@
 <?php include("header.php")?>
-
-
+ 
 <?php
 
 
@@ -173,14 +172,14 @@ function limpiar($string )
       <p>
         
     
-	<table id="one-column-emphasis" summary="2007 Major IT Companies' Profit">
-    <colgroup>
-    	<col class="oce-first" />
-    </colgroup>
+	<table width="614" >
+    
     <thead>
     	<tr>
-        	<th scope="col">Proveedor</th>
-            <th scope="col">Precios</th>
+        	<th id='etiqueta'>Proveedor</th>
+            <th id='etiqueta'>Precios</th>
+            <th id='etiqueta'>Cantidad</th>
+            <th id='etiqueta'>Fecha</th>
             </tr>
     </thead>
     <tbody>
@@ -190,7 +189,12 @@ if(!empty($buscar)){
 	
 	
 	
-				$find = "SELECT * FROM tbk_docprocompra WHERE  `cbarra_pro` =  '".$buscar."'";
+				$find = "SELECT c.rut_cli, c.fecha_docc, d.cantidad_fpc, d.valor_fpc, p.nombre_pv
+FROM tbk_documentocompra c, tbk_docprocompra d, tbk_proveedor p
+WHERE c.id_docc = d.id_docc
+AND d.cbarra_pro =  '".$buscar."'
+AND p.rut_pv = c.rut_cli
+GROUP BY c.rut_cli";
 				if ($resf = mysql_query($find, $conn))
 				{
 				
@@ -198,29 +202,92 @@ if(!empty($buscar)){
 					$i=0;
 					WHILE ($ficha2 = mysql_fetch_row($resf))
 					{
-						$ffpv = $ficha2[4];
+						$ffpv = $ficha2[3];
 						$ffidcod= $ficha2[0];
+						$cantidad =$ficha2[2];
+						$fecha = $ficha2[1];
+						$nomsaa = $ficha2[4];
 								
 							
 	?>
-    <?php
-    
-	
-	
-	?>
-    	<tr>
-        	<td><?php echo"".$ffidrt.""; ?></td>
+ 
+   
+   
+    <tr>
+        	<td id='etiqueta' ><?php echo "".$nomsaa.""  ?></td>
           
-            <td ><?php echo"".$ffpv.""; ?></td>
-          
+            <td id ='data'><?php echo"".$ffpv.""; ?></td>
+             <td id ='data'><?php echo"".$cantidad.""; ?></td>
+                <td id ='data' ><?php echo"".$fecha.""; ?></td>
             </tr> 
-             <?php } 
+             <?php  } 
 			 $i++;
 			 
 			 } ?>
     </tbody>
 </table>
+ <div style="width:620px; height:200px; overflow:auto;">
+	<table width="614"  >
+    
+	   <thead>
+    	<tr>
+        	<th id='etiqueta'>Cliente</th>
+            <th id='etiqueta'>Precios</th>
+            <th id='etiqueta'>Cantidad</th>
+            <th id='etiqueta'>Fecha</th>
+            </tr>
+    </thead>
+    <tbody>
+    
+ <?php	$buscar		=$_GET['buscar']; 
+
+if(!empty($buscar)){
 	
+	
+	
+				$find = "SELECT p.nombre_pro, k.fecha_kdx, k.id_pro, k.rut_kdx, c.nombre_cli, k.cantidad_doc2_kdx, k.precio_kdx
+FROM tbk_kardex k, tbk_cliente c, tbk_producto p
+WHERE 
+
+k.operacion_kdx =1
+AND c.rut_cli = k.rut_kdx
+AND p.id_pro = k.id_pro
+AND p.codigo_pro =  '".$buscar."'";
+//echo"$find";
+				if ($resf = mysql_query($find, $conn))
+				{
+				
+					
+					$i=0;
+					WHILE ($ficha2 = mysql_fetch_row($resf))
+					{
+						$ffpv = $ficha2[6];
+						$ffidcod= $ficha2[6];
+						$cantidad =$ficha2[5];
+						$fecha = $ficha2[1];
+						$nomsaa = $ficha2[4];
+								
+							
+	?>
+	  
+      
+      <tr >
+	   <td id='etiqueta'><?php echo "".$nomsaa.""  ?></td>
+          
+            <td id='data' ><?php echo"".$ffpv.""; ?></td>
+             <td  id='data'><?php echo"".$cantidad.""; ?></td>
+                <td id='data'><?php echo"".$fecha.""; ?></td>
+            </tr> 
+            
+	    </tr>
+        
+        <?php  } 
+			 $i++;
+			 
+			 } }?>
+         </tbody> 	
+	  </table>
+	</div>
 	<?php 
 				
 				
@@ -231,11 +298,6 @@ if(!empty($buscar)){
 		
 		
 		}
-
-
-
-
-
 
 
 ?>
@@ -289,4 +351,4 @@ if(!empty($buscar)){
 </table>
 </center>
 
-<?php include("footer.php")?>
+<?php include("footer.php");?>
