@@ -353,11 +353,12 @@
 						$insert.= "'".$fcdecto1."',";
 						$insert.= "'".$fcdecto2."',";
 						$insert.= "'".$fcdecto3."',";
+						$insert.= "'',";
 						$insert.= "'".	"'";
 
 						$insert.= ")";						
 						
-					//	echo "<br/>".$insert."</br/>";
+					 	echo "<br/>".$insert."</br/>";
 						if ($resip = mysql_query($insert,$conn))
 						{
 									//echo " <br/> Producto ".$codigo." ingresado.";

@@ -281,13 +281,13 @@ function limpiar($string )
 			<fieldset>
 				<table  width='800' cellspacing='5' cellpadding='5' >
 						 <tr>
-			    <td id='etiqueta' >Tipo Doc</td>
-			    <td id='etiqueta' >Compra</td>
-			    <td id='etiqueta' >N Doc.</td>
-			    <td id='etiqueta' >Fecha</td>
-			    <td id='etiqueta' >Total Compra</td>
-			    <td id='etiqueta' >N Cheque</td>
-			    <td id='etiqueta' >Banco</td>
+			    <td width="100" id='etiqueta'  >Tipo Doc</td>
+			    <td width="65" id='etiqueta' >Compra</td>
+			    <td width="66" id='etiqueta' >N Doc.</td>
+			    <td width="124" id='etiqueta' >Fecha Compra</td>
+			    <td width="135" id='etiqueta' >Total Compra</td>
+			    <td width="100" id='etiqueta' >N Cheque</td>
+			    <td width="69" id='etiqueta' >Banco</td>
 			    
 			    </tr>		
 				
@@ -298,11 +298,11 @@ function limpiar($string )
 						 
 					
 						 $i=0;
-						 $deud ="SELECT  d.tipo_docc, d.fecha_docc, d.codigo_docc, d.fcpago, d.fecha_pago
+						 $deud ="SELECT  d.tipo_docc, d.fecha_docc, d.codigo_docc, d.fcpago, d.fecha_pago,d.id_docc,d.total_docc
 								FROM tbk_documentocompra d, tbk_proveedor p
 								WHERE d.rut_cli = p.rut_pv
 								AND d.rut_cli LIKE '".trim($nrut)."'";
- 					//echo"$deud";
+ 					 //	echo"$deud";
 					if ($resf = mysql_query($deud, $conn))
 				{
 				
@@ -316,6 +316,8 @@ function limpiar($string )
 							$scodigo  = $row[2];
 							$sfpago = $row[3];
 							$sfechapao= $row[4];
+							$iddocc = $row[5];
+							$total_com = $row[6];
 							 
 					$documento="";
 				SWITCH($stipo)
@@ -337,13 +339,13 @@ function limpiar($string )
 							
 												 ?>
                          <tr>
-			    <td id ='data'><?php echo"$documento";?></td>
-			    <td id='data'><?php echo"$paga"; ?></td>
-			    <td id='data'><a href="#"> <?php echo"$scodigo";?></a></td>
-			    <td id='data'><?php echo"$sfecha";?></td>
-			    <td id='data'><?php ?></td>
-			    <td id='data'><?php ?></td>
-			    <td id='data'><?php ?></td>
+			    <td id ='data' width="100"><?php echo"$documento";?></td>
+			    <td id='data' width="65"><?php echo"$paga"; ?></td>
+			    <td id='data' width="66"><a href="verfacturacompra.php?cb=<?=$iddocc?>" target="popup"  onClick="window.open(this.href, this.target, 'width=500,height=600'); return false;"> <?php echo"$scodigo";?></a></td>
+			    <td id='data' width="124"><?php echo"$sfecha";?></td>
+			    <td id='data' width="135"><?php echo"$total_com";?></td>
+			    <td id='data' width="100"><?php ?></td>
+			    <td id='data' width="66"><?php ?></td>
 			    
 			    </tr>		
 				<?php 
