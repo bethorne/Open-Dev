@@ -283,11 +283,12 @@ function limpiar($string )
 						 <tr>
 			    <td width="100" id='etiqueta'  >Tipo Doc</td>
 			    <td width="65" id='etiqueta' >Compra</td>
-			    <td width="66" id='etiqueta' >N Doc.</td>
-			    <td width="124" id='etiqueta' >Fecha Compra</td>
-			    <td width="135" id='etiqueta' >Total Compra</td>
-			    <td width="100" id='etiqueta' >N Cheque</td>
-			    <td width="69" id='etiqueta' >Banco</td>
+			    <td width="50" id='etiqueta' >N Doc.</td>
+			    <td width="110" id='etiqueta' >Fecha Compra</td>
+			    <td width="95" id='etiqueta' >Total Compra</td>
+			    <td width="95" id='etiqueta' >Fecha de Cancelacion</td>
+			    <td width="80" id='etiqueta' >Banco</td>
+                 <td width="69" id='etiqueta' >Forma Pago</td>
 			    
 			    </tr>		
 				
@@ -298,11 +299,13 @@ function limpiar($string )
 						 
 					
 						 $i=0;
-						 $deud ="SELECT  d.tipo_docc, d.fecha_docc, d.codigo_docc, d.fcpago, d.fecha_pago,d.id_docc,d.total_docc
+					 
+								
+						 $deud ="SELECT  d.tipo_docc, d.fecha_docc, d.codigo_docc, d.fcpago, d.fecha_pago,d.id_docc,d.total_docc,d.pago1,d.bancocheque
 								FROM tbk_documentocompra d, tbk_proveedor p
 								WHERE d.rut_cli = p.rut_pv
 								AND d.rut_cli LIKE '".trim($nrut)."'";
- 					 //	echo"$deud";
+ 					 	//echo"$deud";
 					if ($resf = mysql_query($deud, $conn))
 				{
 				
@@ -318,6 +321,50 @@ function limpiar($string )
 							$sfechapao= $row[4];
 							$iddocc = $row[5];
 							$total_com = $row[6];
+							$pago1=$row[7];
+							$banco=$row[8];
+							
+				 
+					SWITCH($pago1)
+					{
+					CASE '1' : $pago1 = "Efectivo"; break;
+					CASE '2' : $pago1 = "RedCompra"; break;
+					CASE '3' : $pago1 = "Cheque"; break;
+					CASE '4' : $pago1 = "Transf. Electr&oacute;nica"; break;
+					}
+							 
+					SWITCH($banco)
+					{
+							CASE '1' : $banco  = "ABN AMRO"; break;
+								CASE '2' : $banco  = "Atlas - Citibank"; break;
+								CASE '3' : $banco  = "BancaFacil - Sitio de educación bancaria"; break;
+								CASE '4' : $banco  = "Banco Bice"; break;
+								CASE '5' : $banco  = "Banco Central de Chile"; break;
+								CASE '6' : $banco  = "Banco de Chile"; break;
+								CASE '7' : $banco  = "Banco de Crédito e Inversiones"; break;
+								CASE '8' : $banco  = "Banco del Desarrollo"; break;
+								CASE '9' : $banco  = "Banco del Desarrollo - Asesoría Financiera"; break;
+								CASE '10' : $banco  = "Banco Edwards"; break;
+								CASE '11' : $banco  = "Banco Falabella"; break;
+								CASE '12' : $banco  = "Banco Internacional"; break;
+								CASE '13' : $banco  = "Banco Nova"; break;
+								CASE '14' : $banco  = "Banco Penta"; break;
+								CASE '15' : $banco  = "Banco Santander Santiago"; break;
+								CASE '16' : $banco  = "Banco Security"; break;
+								CASE '17' : $banco  = "BancoEstado"; break;
+								CASE '18' : $banco  = "BBVA"; break;
+								CASE '19' : $banco  = "Citibank N.A. Chile"; break;
+								CASE '20' : $banco  = "Corpbanca"; break;
+								CASE '21' : $banco  = "Credichile"; break;
+								CASE '22' : $banco  = "Credit Suisse Consultas y Asesorias Ltda"; break;
+								CASE '23' : $banco  = "Deutsche Bank"; break;
+								CASE '24' : $banco  = "ING Bank N.V."; break;
+								CASE '25' : $banco  = "Redbanc"; break;
+								CASE '26' : $banco  = "Santander Banefe"; break;
+								CASE '27' : $banco  = "Scotiabank Sud Americano"; break;
+								CASE '28' : $banco  = "Scotiabank Sud Americano"; break;
+								CASE '29' : $banco  = "UBS AG in Santiago de Chile"; break;
+					}
 							 
 					$documento="";
 				SWITCH($stipo)
@@ -339,13 +386,14 @@ function limpiar($string )
 							
 												 ?>
                          <tr>
-			    <td id ='data' width="100"><?php echo"$documento";?></td>
-			    <td id='data' width="65"><?php echo"$paga"; ?></td>
-			    <td id='data' width="66"><a href="verfacturacompra.php?cb=<?=$iddocc?>" target="popup"  onClick="window.open(this.href, this.target, 'width=500,height=600'); return false;"> <?php echo"$scodigo";?></a></td>
-			    <td id='data' width="124"><?php echo"$sfecha";?></td>
-			    <td id='data' width="135"><?php echo"$total_com";?></td>
-			    <td id='data' width="100"><?php ?></td>
-			    <td id='data' width="66"><?php ?></td>
+			    <td id ='data' width="98"><?php echo"$documento";?></td>
+			    <td id='data' width="60"><?php echo"$paga"; ?></td>
+			    <td id='data' width="50"><a href="verfacturacompra.php?cb=<?=$iddocc?>" target="popup"  onClick="window.open(this.href, this.target, 'width=500,height=600'); return false;"> <?php echo"$scodigo";?></a></td>
+			    <td id='data' width="110"><?php echo"$sfecha";?></td>
+			    <td id='data' width="95"><?php echo"$ $total_com";?></td>
+			    <td id='data' width="95"><?php echo "$sfechapao"; ?></td>
+			    <td id='data' width="80"><?php echo"$pago1";?></td>
+                 <td id='data' width="66"><?php echo"$banco";?></td>
 			    
 			    </tr>		
 				<?php 
@@ -360,11 +408,9 @@ function limpiar($string )
 				<table border='0' cellspacing='5' cellpadding='5' >
 					<tr>
 					<td id='data' valign='bottom' align='center'>
-							<a  id='menualternativo' href='home.php'><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
+							<a  id='menualternativo' href='cuentacorrientepro.php'><img src="images/logos/cancelar0.jpg" onmouseover="this.src = 'images/logos/cancelar1.jpg'" onmouseout="this.src = 'images/logos/cancelar0.jpg'" border="0"></img></a><br/>
 					</td>
-					<td id='data' valign='bottom'  align='center'>
-							<a id='menu' href='#'  onCLick='np.look.value=3; np.submit()'><img src="images/logos/aceptar0.jpg" onmouseover="this.src = 'images/logos/aceptar1.jpg'" onmouseout="this.src = 'images/logos/aceptar0.jpg'" border="0"></img></a>
-					</td>
+					 
 
 					</tr>
 			</table>

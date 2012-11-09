@@ -116,8 +116,9 @@ AND c.fcpago =1";
 					 echo "<H1> FACTURA CANCELADA </h1>";			
 			// actualizar factura cancelada	
 			
-			$update ="UPDATE tbk_documentocompra SET fcpago =3,fecha_pago = '".date("d-m-Y H:i:s")."' WHERE id_docc =  '".$pagofactura."' ";
-			// echo "<p>".$update;
+			//$update ="UPDATE tbk_documentocompra SET fcpago =3,fecha_pago = '".date("d-m-Y H:i:s")."' pago1='".$pago1."',bancocheque ='".$bancocheque1."' WHERE id_docc =  '".$pagofactura."' ";
+			$update ="UPDATE tbk_documentocompra SET fcpago ='3',fecha_pag` =  '".date("d-m-Y H:i:s")."',pago1 ='".$pago1."',bancocheque ='".$bancocheque1."' WHERE  id_docc ='".$pagofactura."'";
+			 echo "<p>".$update;
 			$ressaldo = mysql_query($update, $conn);
 			break;
 					 
